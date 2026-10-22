@@ -1,0 +1,82 @@
+:root {
+    --tinta: #10243e;
+    --biru: #0b5cab;
+    --oranye: #f26b21;
+    --kertas: #f5f7fa;
+    --garis: #d5dce6;
+    --putih: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--kertas);
+    color: var(--tinta);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.25; }
+a { color: var(--biru); }
+a:focus-visible, video:focus-visible { outline: 3px solid var(--oranye); outline-offset: 2px; }
+
+.halaman { max-width: 1050px; margin: 0 auto; padding: 0 16px; }
+
+header.situs { background: var(--putih); border-bottom: 1px solid var(--garis); }
+header.situs .halaman { display: flex; align-items: center; gap: 14px; padding-top: 14px; padding-bottom: 14px; }
+header.situs img { width: 48px; height: 48px; }
+header.situs p { margin: 0; font-size: 0.9rem; color: #4a5b70; }
+header.situs .nama-situs { font-family: Georgia, serif; font-size: 1.4rem; font-weight: bold; color: var(--tinta); margin: 0; }
+
+nav.utama { background: var(--tinta); }
+nav.utama ul { list-style: none; margin: 0 auto; padding: 0 16px; max-width: 1040px; display: flex; flex-wrap: wrap; }
+nav.utama a { display: block; padding: 12px 16px; color: var(--putih); text-decoration: none; }
+nav.utama a:hover { background: var(--biru); }
+nav.utama a:focus-visible { outline-color: var(--putih); outline-offset: -3px; }
+
+.isi { display: grid; grid-template-columns: 1fr 220px; gap: 24px; padding-top: 28px; padding-bottom: 28px; }
+
+article { background: var(--putih); border: 1px solid var(--garis); border-radius: 6px; padding: 24px; }
+article section + section { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--garis); }
+article h2 { margin: 0 0 10px; font-size: 1.3rem; }
+article p { max-width: 66ch; margin: 0 0 12px; }
+
+.biodata { display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: start; }
+.foto-diri { width: 200px; height: auto; border-radius: 4px; display: block; }
+.biodata h1 { margin: 0 0 12px; font-size: 1.8rem; }
+dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 4px 18px; }
+dt { font-weight: 600; }
+dd { margin: 0; }
+
+.multimedia { display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px; align-items: start; }
+.multimedia figure { margin: 0; }
+.multimedia video { width: 100%; height: auto; display: block; background: #000; border-radius: 4px; }
+.multimedia figcaption { font-size: 0.85rem; color: #4a5b70; margin-top: 6px; }
+.koleksi { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.koleksi img { width: 100%; height: auto; display: block; border-radius: 4px; border: 1px solid var(--garis); }
+
+
+.unduhan ul { margin: 0; padding-left: 20px; }
+.unduhan li { margin-bottom: 4px; }
+
+aside { align-self: start; display: flex; flex-direction: column; gap: 20px; }
+.aside-block { background: var(--tinta); color: var(--putih); border-radius: 6px; padding: 18px; }
+.aside-block h2 { margin: 0 0 12px; font-size: 1.1rem; }
+.aside-block figure { margin: 0 0 14px; }
+.aside-block figure:last-child { margin-bottom: 0; }
+.aside-block img { width: 100%; height: auto; display: block; border-radius: 4px; }
+.aside-block figcaption { font-size: 0.85rem; margin-top: 4px; color: #c9d4e2; }
+.aside-block ul { margin: 0; padding-left: 18px; }
+
+footer.situs { background: var(--tinta); color: #c9d4e2; text-align: center; padding: 18px 16px; font-size: 0.9rem; }
+footer.situs p { margin: 0; }
+
+@media (max-width: 800px) {
+    .isi { grid-template-columns: 1fr; }
+    .biodata { grid-template-columns: 1fr; }
+    .foto-diri { width: 160px; }
+    .multimedia { grid-template-columns: 1fr; }
+    dl { grid-template-columns: 1fr; }
+    dt { margin-top: 6px; }
+}

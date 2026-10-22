@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Praktikum 3 - Layout IFRAME</title>
+    <style>
+        html, body { height: 100%; margin: 0; }
+        .layout {
+            display: grid;
+            grid-template-rows: 100px 1fr 50px;
+            grid-template-columns: 150px 1fr;
+            height: 100%;
+        }
+        .layout iframe { border: 0; width: 100%; height: 100%; display: block; }
+        .layout .atas, .layout .bawah { grid-column: 1 / 3; }
+        .layout .menu-frame { border-right: 1px solid #888; }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <iframe class="atas" src="header.html" title="Header"></iframe>
+        <iframe class="menu-frame" src="menu.html" title="Menu praktikum"></iframe>
+        <iframe src="praktikum1.html" name="showframe" title="Isi praktikum"></iframe>
+        <iframe class="bawah" src="footer.html" title="Footer"></iframe>
+    </div>
+</body>
+</html>
